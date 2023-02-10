@@ -26,6 +26,7 @@ function Form({ template, onSubmit, watchFields, validate }) {
             <div key={name}>
               <label htmlFor={name}>{title}</label>
               <input
+                style={{ borderWidth: "2px", borderColor: "red" }}
                 type="text"
                 name={name}
                 id={name}

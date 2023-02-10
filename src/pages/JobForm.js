@@ -1,51 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Form from "../components/Forms/Reusable/Form";
+import t from "../templates/forms/jobTemplate.json";
 
 function JobForm(props) {
-  let template = {
-    title: "Job Application Form",
-    fields: [
-      {
-        title: "First Name",
-        type: "text",
-        name: "firstname",
-        validationProps: {
-          required: "First Name is mandatory",
-        },
-      },
-      {
-        title: "Second Name",
-        type: "text",
-        name: "secondname",
-        validationProps: {
-          required: "Second Name is mandatory",
-        },
-      },
-      {
-        title: "Email",
-        type: "email",
-        name: "email",
-      },
-      {
-        title: "Include Portfolio",
-        type: "checkbox",
-        name: "include_portfolio",
-      },
-      {
-        title: "Portfolio Link",
-        type: "url",
-        name: "portfolio_link",
-        dynamic: {
-          field: "include_portfolio",
-          value: true,
-        },
-      },
-    ],
-  };
+  useEffect(() => {
+    // Update the document title using the browser API
+    console.log(t);
+  });
 
   return (
     <Form
-      template={template}
+      template={t}
       watchFields={["firstname", "include_portfolio"]}
       validate={validate}
       onSubmit={onSubmit}
